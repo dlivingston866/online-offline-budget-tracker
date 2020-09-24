@@ -1,2 +1,2 @@
 # online-offline-budget-tracker!
-![Image](Screen Shot.png)
+![Image](screenshot.jpg)

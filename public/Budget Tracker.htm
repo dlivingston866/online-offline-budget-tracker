@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3001/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#317EFB">
+  <link rel="shortcut icon" href="http://localhost:3001/icons/icon-192x192.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="./Budget Tracker_files/font-awesome.min.css">
+  <link rel="stylesheet" href="./Budget Tracker_files/styles.css">
+  <link rel="manifest" href="http://localhost:3001/manifest.webmanifest.json">
+
+  <title>Budget Tracker</title>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+<body>
+  <div class="wrapper"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+    <div class="total">
+      <div class="total">Your total is: $<span id="total">173</span></div>
+    </div>
+
+    <div class="form">
+      <input type="text" id="t-name" placeholder="Name of transaction">
+      <input type="number" min="0" id="t-amount" placeholder="Transaction amount">
+      <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
+      <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
+      <p class="error"></p>
+    </div>
+
+    <div class="transactions">
+      <table>
+        <thead>
+          <tr><th>Transaction</th>
+          <th>Amount</th>
+        </tr></thead>
+        <tbody id="tbody"><tr>
+      <td>Withdraw</td>
+      <td>-400</td>
+    </tr><tr>
+      <td>Deposit</td>
+      <td>223.00</td>
+    </tr><tr>
+      <td>Deposit</td>
+      <td>350.00</td>
+    </tr></tbody>
+      </table>
+    </div>
+    
+    <canvas id="myChart" style="display: block; height: 412px; width: 825px;" class="chartjs-render-monitor" width="1650" height="824"></canvas>
+  </div>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+        .then(reg => {
+          console.log("We found your service worker file!", reg);
+        });
+      });
+    }
+  </script>
+  <script src="./Budget Tracker_files/chart.js@2.8.0"></script>
+  <script src="./Budget Tracker_files/index.js"></script>
+  <script src="./Budget Tracker_files/db.js"></script>
+ 
+
+</body></html>
